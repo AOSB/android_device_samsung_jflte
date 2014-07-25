@@ -86,7 +86,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 HAVE_ADRENO_SOURCE := false
 
 # GPS
-BOARD_HAVE_NEW_QC_GPS := true
+TARGET_NO_RPC := true
 
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8960
