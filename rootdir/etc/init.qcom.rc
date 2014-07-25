@@ -313,11 +313,6 @@ on post-fs-data
 
     chown root radio /sys/module/rmnet_usb/parameters/dump_ctrl_msg
 
-    write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-
 on property:init.svc.surfaceflinger=stopped
     stop ppd
     stop hdmid
