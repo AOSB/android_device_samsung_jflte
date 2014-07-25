@@ -440,3 +440,22 @@ service bugreport /system/bin/dumpstate -d -p -B \
     disabled
     oneshot
     keycodes 114 115 116
+
+service secril-daemon /system/bin/sec-ril
+    class main
+    user root
+    group radio cache inet misc audio sdcard_rw diag log
+
+# SISO-ANDR-PERF :: START Changing scheduler to row after boot complete
+on property:sys.boot_completed=1
+    write /sys/block/mmcblk0/queue/scheduler row
+
+# insthk
+service insthk /system/bin/insthk
+    class main
+    user root
+    disabled
+    oneshot
+
+on property:sys.qseecomd.enable=true
+    start insthk
